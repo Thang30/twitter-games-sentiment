@@ -23,18 +23,18 @@ class StreamListener(tweepy.StreamListener):
             return
         # print(status.text)
 
-        # description = status.user.description
+        description = status.user.description
         loc = status.user.location
         text = status.text
         coords = status.coordinates
         geo = status.geo
-        # name = status.user.screen_name
+        name = status.user.screen_name
         user_created = status.user.created_at
         followers = status.user.followers_count
-        # id_str = status.id_str
+        id_str = status.id_str
         created = status.created_at
         retweets = status.retweet_count
-        # bg_color = status.user.profile_background_color
+        bg_color = status.user.profile_background_color
 
         # get the sentiment score for each tweet
         blob = TextBlob(text)
@@ -53,18 +53,18 @@ class StreamListener(tweepy.StreamListener):
         # insert information about the tweets
         try:
             table.insert(dict(
-                # user_description=description,
+                user_description=description,
                 user_location=loc,
                 coordinates=coords,
                 text=text,
                 geo=geo,
-                # user_name=name,
+                user_name=name,
                 user_created=user_created,
                 user_followers=followers,
-                # id_str=id_str,
+                id_str=id_str,
                 created=created,
                 retweet_count=retweets,
-                # user_bg_color=bg_color,
+                user_bg_color=bg_color,
                 polarity=sent.polarity,
                 subjectivity=sent.subjectivity,
             ))
