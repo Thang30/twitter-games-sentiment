@@ -2,6 +2,9 @@
 *.db
 *csv
 
+# private information
+helpers/private.py
+
 # ipython notebook checkpoint
 .ipynb_checkpoints/
 
