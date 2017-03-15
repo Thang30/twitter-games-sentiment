@@ -1,5 +1,11 @@
+# database
+*.db
+*csv
+
 # ipython notebook checkpoint
 .ipynb_checkpoints/
+
+.idea/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
