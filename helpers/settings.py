@@ -4,6 +4,11 @@ try:
 except Exception:
     pass
 
-CONNECTION_STRING = 'sqlite:///first_tweets.db'
-TABLE_NAME = 'zelda_botw'
-CSV_NAME = 'zelda_botw.csv'
+CONNECTION_STRING = 'sqlite:///tweets.db'
+TABLE_NAME = 'games_tweets'
+CSV_NAME = 'games_tweets.csv'
+GAME_LIST = ["#BreathOfTheWild", "#shovelknight",
+             "#HorizonZeroDawn", "#nierautomata",
+             "#nioh", "#nightinthewoods",
+             "#ResidentEvil7", "#TormentTidesOfNumenera",
+             "#yakuza0", "#hollowknight"]

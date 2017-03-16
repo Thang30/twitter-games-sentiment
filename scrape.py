@@ -6,7 +6,8 @@ from sqlalchemy.exc import ProgrammingError
 import dataset
 
 # set up tweepy to authenticate with Twitter
-auth = tweepy.OAuthHandler(settings.TWITTER_APP_KEY, settings.TWITTER_APP_SECRET)
+auth = tweepy.OAuthHandler(settings.TWITTER_APP_KEY,
+                           settings.TWITTER_APP_SECRET)
 auth.set_access_token(settings.TWITTER_KEY, settings.TWITTER_SECRET)
 
 # pass in the authentication, create an API object to
@@ -17,6 +18,8 @@ api = tweepy.API(auth)
 db = dataset.connect(settings.CONNECTION_STRING)
 
 # subclass to override methods
+
+
 class StreamListener(tweepy.StreamListener):
     def on_status(self, status):
         if status.retweeted:
@@ -81,4 +84,4 @@ stream_listener = StreamListener()
 # authentication credentials and calling callback functions
 stream = tweepy.Stream(api.auth, listener=stream_listener)
 # start streaming with a list of terms to filter on
-stream.filter(track=["zelda", "botw", "breath of the wild"])
+stream.filter(track=settings.GAME_LIST)
