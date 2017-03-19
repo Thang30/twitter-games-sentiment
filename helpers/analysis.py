@@ -2,9 +2,9 @@ from helpers import settings
 
 
 def tweet_lengths(text):
-    if len(text) < 100:
+    if len(text) < 50:
         return "short"
-    elif 100 <= len(text) <= 135:
+    elif 50 <= len(text) <= 100:
         return "medium"
     else:
         return "long"

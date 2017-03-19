@@ -1,6 +1,6 @@
 # database
 *.db
-*csv
+
 
 # private information
 helpers/private.py
